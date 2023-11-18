@@ -4,6 +4,7 @@ class Group < ApplicationRecord
 
   belongs_to :user
 
-  validates :name, presence: true, length: { maximum: 36 }, uniqueness: { scope: :user, message: "user already has this group" }
+  validates :name, presence: true, length: { maximum: 36 },
+                   uniqueness: { scope: :user, message: 'user already has this group' }
   validates :icon, presence: true, length: { maximum: 250 }
 end
