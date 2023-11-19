@@ -9,7 +9,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  root "groups#index"
+  devise_scope :user do
+    authenticated :user do
+      root :to => 'groups#index', as: :authenticated_root
+    end
+    unauthenticated :user do
+      root :to => 'pages#splash', as: :unauthenticated_root
+    end
+  end
+
   resources :groups do
     resources :purchases
   end
