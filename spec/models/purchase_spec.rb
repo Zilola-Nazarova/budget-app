@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Purchase, type: :model do
   let(:valid_attributes) { { 'author' => @user, 'name' => 'Apples', 'amount' => 2 } }
   let(:no_name) { { 'author' => @user, 'amount' => 2 } }
+  let(:no_author) { { 'name' => 'Apples', 'amount' => 2 } }
   let(:name_too_long) { { 'author' => @user, 'name' => 'A' * 37, 'amount' => 2 } }
   let(:no_amount) { { 'author' => @user, 'name' => 'Apples' } }
   let(:amount_string) do
@@ -20,6 +21,16 @@ RSpec.describe Purchase, type: :model do
 
   before :all do
     @user = User.create(name: 'Tom')
+  end
+
+  context 'user' do
+    it 'is valid when attribute exists' do
+      expect(Purchase.create(valid_attributes)).to be_valid
+    end
+
+    it 'is not valid when attribute is blank' do
+      expect(Purchase.create(no_author)).to_not be_valid
+    end
   end
 
   context 'name' do

@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Group, type: :model do
   let(:valid_attributes) { { 'user' => @user, 'name' => 'Food', 'icon' => 'missing_avatar.png' } }
   let(:no_name) { { 'user' => @user, 'icon' => 'missing_avatar.png' } }
+  let(:no_user) { { 'name' => 'Food', 'icon' => 'missing_avatar.png' } }
   let(:name_too_long) { { 'user' => @user, 'name' => 'A' * 37, 'icon' => 'missing_avatar.png' } }
   let(:no_icon) { { 'user' => @user, 'name' => 'Food' } }
   let(:icon_too_long) do
@@ -11,6 +12,16 @@ RSpec.describe Group, type: :model do
 
   before :all do
     @user = User.create(name: 'Tom')
+  end
+  
+  context 'user' do
+    it 'is valid when attribute exists' do
+      expect(Group.create(valid_attributes)).to be_valid
+    end
+
+    it 'is not valid when attribute is blank' do
+      expect(Group.create(no_user)).to_not be_valid
+    end
   end
 
   context 'name' do
