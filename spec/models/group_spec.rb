@@ -13,7 +13,7 @@ RSpec.describe Group, type: :model do
   before :all do
     @user = User.create(name: 'Tom')
   end
-  
+
   context 'user' do
     it 'is valid when attribute exists' do
       expect(Group.create(valid_attributes)).to be_valid
