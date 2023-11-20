@@ -1,7 +1,12 @@
 class PurchasesController < ApplicationController
-  def index; end
+  def index
+    @group = Group.find(params[:group_id])
+    @purchases = @group.purchases.order(id: :desc)
+  end
 
-  def show; end
+  def show
+    @purchase = Purchase.find(params[:id])
+  end
 
   def new; end
 
@@ -9,5 +14,10 @@ class PurchasesController < ApplicationController
 
   def update; end
 
-  def delete; end
+  def destroy
+    @purchase = Purchase.find(params[:id])
+    @purchase.destroy!
+    flash[:success] = 'Transaction was deleted successfully!'
+    redirect_to group_purchases_url(params[:group_id])
+  end
 end

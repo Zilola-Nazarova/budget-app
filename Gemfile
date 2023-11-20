@@ -60,6 +60,9 @@ gem 'devise'
 # For authorization
 gem 'cancancan'
 
+# For inline_svg_tag
+gem 'inline_svg'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'database_cleaner'
