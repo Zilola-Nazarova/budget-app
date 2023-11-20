@@ -11,5 +11,10 @@ class GroupsController < ApplicationController
 
   def update; end
 
-  def delete; end
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy!
+    flash[:success] = 'Category was deleted successfully!'
+    redirect_to groups_url
+  end
 end
