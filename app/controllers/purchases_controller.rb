@@ -17,7 +17,7 @@ class PurchasesController < ApplicationController
     # @groups.count.times do
     #   @purchase.group_purchases.new
     #   index += 1
-      # name = @group.name
+    #   name = @group.name
     # end
     # @purchase.group_purchases.build
     # @group_purchase = GroupPurchase.new
