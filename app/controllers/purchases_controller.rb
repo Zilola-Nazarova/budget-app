@@ -32,15 +32,39 @@ class PurchasesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @purchase = Purchase.find(params[:id])
+  end
 
-  def update; end
+  def update
+    @purchase = Purchase.find(params[:id])
+    @groups = Group.where(id: purchase_params[:group_ids])
+    if @groups.empty?
+      flash.now[:error] = "You must choose at least one category!"
+      render :edit
+    else
+      if @purchase.update(purchase_params.except(:group_ids))
+        @groups.each do |group|
+          group.purchases << @purchase unless group.purchases.include?(@purchase)
+        end
+        flash[:notice] = 'Transaction updated successfully!'
+        redirect_to group_purchase_path(params[:group_id], params[:id])
+      else
+        flash.now[:error] = @purchase.errors.full_messages.to_sentence
+        render :edit
+      end
+    end
+  end
 
   def destroy
     @purchase = Purchase.find(params[:id])
-    @purchase.destroy!
-    flash[:error] = 'Transaction was deleted successfully!'
-    redirect_to group_purchases_url(params[:group_id])
+    if @purchase.destroy
+      flash[:success] = 'Transaction was deleted successfully!'
+      redirect_to group_purchases_url(params[:group_id])
+    else
+      flash.now[:error] = @purchase.errors.full_messages.to_sentence
+      render :show
+    end
   end
 
   def purchase_params

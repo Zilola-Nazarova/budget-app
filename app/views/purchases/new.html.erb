@@ -25,7 +25,7 @@
     </div>
 
     <div class="checkbox">
-      <%= f.label :amount, "Choose categories:" %><br />
+      <%= f.label :amount, "categories" %><br />
       <%= f.collection_check_boxes :group_ids, current_user.groups, :id, :name, :include_hidden => false %>
       <span>No mathing category?</span>
       <%= link_to "add a new category", new_group_path, data: { turbo: false }, class: "static"  %>
