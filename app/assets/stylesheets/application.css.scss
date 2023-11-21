@@ -16,7 +16,8 @@
 
 $blue: #3b74b4;
 $white: #fff;
-$grey: #ebebeb;
+$grey: #e4e4e4;
+$secondary-white: #f7f7f7;
 $green: #67b930;
 $normal-grey: #616161;
 $light-grey: #949494;
@@ -81,61 +82,115 @@ main {
   margin-bottom: 6rem;
 }
 
-// main ul {
-//   display: flex;
-//   gap: 1rem;
-//   flex-direction: column;
-// }
+ul.group_list {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+ul.purchase_list {
+  gap: 0.2rem;
+}
 
 main li {
-  height: 5rem;
-  padding: 0.5rem;
   list-style: none;
+}
+
+span {
+  display: block;
+}
+
+.item {
   background-color: $white;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-main li:first-of-type {
-  margin-top: 0;
-}
-
-main .item {
+  padding: 0.5rem;
+  height: 6rem;
   display: flex;
-  height: 100%;
   position: relative;
 }
 
-.item div {
+.checkout {
+  height: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.associated_categories {
+  background-color: $secondary-white;
+  margin-top: 0.1rem;
+  height: unset;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.associated_category {
+  align-items: center;
+  display: flex;
+  height: 1.2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: $light-grey;
+}
+
+.associated_category .icon {
+  margin-right: 0.5rem;
+}
+
+.group_info {
   margin-top: 0.5rem;
-  display: block;
   flex: 1;
   position: relative;
 }
 
-.item span:first-of-type {
+.group_info span {
+  display: block;
+}
+
+.group_info.no_margin {
+  margin-top: 0;
+}
+
+.purchase {
+  margin-top: 0.4rem;
+  height: 3.5rem;
+}
+
+.name {
   color: $normal-grey;
   font-size: 1.2rem;
 }
 
-.item span:nth-of-type(2) {
-  position: absolute;
-  top: 0;
-  right: 0;
+.purchase .name {
+  font-size: 1rem;
+}
+
+.checkout .name {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.amount {
   color: $dark-grey;
   font-size: 1rem;
   font-weight: 600;
 }
 
-.item span:last-of-type {
+.group_info .amount {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.date {
   color: $light-grey;
   font-size: 0.9rem;
 }
 
-
+.group_info .date {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
 .icon {
   height: 100%;
@@ -161,12 +216,12 @@ main .item {
   font-weight: 400;
 }
 
-.edit {
-  bottom: 6rem;
+.blue_action {
+  background-color: $blue;
 }
 
-.delete {
-  background-color: red;
+.upper_action {
+  bottom: 6rem;
 }
 
 #popup {
@@ -184,49 +239,3 @@ main .item {
 .hidden {
   display: none;
 }
-
-
-// .modal {
-//   position: fixed;
-//   z-index: 1;
-//   padding: 2em;
-  
-//   /* Centering */
-//   left: 50%;
-//   top: 50%;
-//   transform: translate(-50%, -50%);
-
-//   overflow: auto;
-//   background-color: rgb(0,0,0);
-//   background-color: rgba(255, 255, 255, 0.1);
-//   border-radius: 5px;
-//   /* Add the drop shadow */
-//   box-shadow: 0 0 10px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.19);
-// }
-
-// .cancel-button {
-//   background-color: #1530ff;
-//   font-size: 12px;
-//   color: white;
-//   padding: 4px 8px;
-//   border: none;
-//   border-radius: 4px;
-//   cursor: pointer;
-//   float: right;
-//   text-decoration: none;
-// }
-// .cancel-button:hover {
-//   background-color: #2640fe;
-// }
-// .responsive-navbar {
-//   opacity: 0;
-// }
-
-// .menu-open {
-//   width: 100vw !important;
-
-//   opacity: 1 !important;
-
-// }
-
-// div.hidden { display: none; }
