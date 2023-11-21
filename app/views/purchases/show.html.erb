@@ -14,6 +14,6 @@
 </main>
 
 <section id="actions">
-  <%= link_to "edit", edit_group_purchase_path(params[:group_id], @purchase), data: { turbo: false }  %>
-  <%= button_to "delete",  {:controller => :purchases, :action => 'destroy'}, method: :delete, data: { turbo: false }  %>
+  <%= link_to "edit", edit_group_purchase_path(params[:group_id], @purchase), data: { turbo: false }, class: "btn upper_action" %>
+  <%= button_to "delete",  {:controller => :purchases, :action => 'destroy'}, method: :delete, data: { turbo: false }, class: "btn blue_action"  %>
 </section>

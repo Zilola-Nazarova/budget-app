@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'new', media: 'all' %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <header>
+    <div id="menu" class="hidden">
       <nav>
         <div class='user_info'>
           <span>Username</span>
@@ -32,13 +32,8 @@
           </li>
         </ul>
       <nav>
-    </header>
+    </div>
 
-    <main>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      
-      <%= yield %>
-    </main>
+    <%= yield %>
   </body>
 </html>

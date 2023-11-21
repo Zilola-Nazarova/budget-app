@@ -9,6 +9,10 @@
 </header>
 
 <main class="with_actions">
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
+
   <div class='item top_category'>
     <%= image_tag(check_url(@group.icon), class: 'icon', alt: 'group_icon') %>
     <div class="group_info">
