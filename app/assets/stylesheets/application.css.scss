@@ -14,8 +14,219 @@
  *= require_self
  */
 
-.chevron {
+$blue: #3b74b4;
+$white: #fff;
+$grey: #ebebeb;
+$green: #67b930;
+$normal-grey: #616161;
+$light-grey: #949494;
+$dark-grey: #2b2b2b;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 300px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.chevron,
+.burger-menu {
   width: 2rem;
   height: 2rem;
   color: black;
 }
+
+body {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+header {
+  padding: 1rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  background-color: $blue;
+  color: $white;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+#homepage h1 {
+  margin: auto;
+}
+
+main {
+  background-color: $grey;
+  padding: 0.8rem;
+  flex: 1; 
+}
+
+.with_actions {
+  margin-bottom: 6rem;
+}
+
+// main ul {
+//   display: flex;
+//   gap: 1rem;
+//   flex-direction: column;
+// }
+
+main li {
+  height: 5rem;
+  padding: 0.5rem;
+  list-style: none;
+  background-color: $white;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+main li:first-of-type {
+  margin-top: 0;
+}
+
+main .item {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.item div {
+  margin-top: 0.5rem;
+  display: block;
+  flex: 1;
+  position: relative;
+}
+
+.item span:first-of-type {
+  color: $normal-grey;
+  font-size: 1.2rem;
+}
+
+.item span:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $dark-grey;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.item span:last-of-type {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: $light-grey;
+  font-size: 0.9rem;
+}
+
+
+
+.icon {
+  height: 100%;
+  margin-right: 1rem;
+}
+
+.btn {
+  border: none;
+  outline: 1px solid $white;
+  outline-offset: -15px;
+  width: 100%;
+  background-color: $green;
+  height: 6rem;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  line-height: 6rem;
+  display: block;
+  align-self: center;
+  text-transform: uppercase;
+  color: $white;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.edit {
+  bottom: 6rem;
+}
+
+.delete {
+  background-color: red;
+}
+
+#popup {
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  vertical-align:middle;
+  background-color: cornflowerblue;
+  color: white;
+  display: none;
+  padding-top: 8px;
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}
+
+
+// .modal {
+//   position: fixed;
+//   z-index: 1;
+//   padding: 2em;
+  
+//   /* Centering */
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+
+//   overflow: auto;
+//   background-color: rgb(0,0,0);
+//   background-color: rgba(255, 255, 255, 0.1);
+//   border-radius: 5px;
+//   /* Add the drop shadow */
+//   box-shadow: 0 0 10px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.19);
+// }
+
+// .cancel-button {
+//   background-color: #1530ff;
+//   font-size: 12px;
+//   color: white;
+//   padding: 4px 8px;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   float: right;
+//   text-decoration: none;
+// }
+// .cancel-button:hover {
+//   background-color: #2640fe;
+// }
+// .responsive-navbar {
+//   opacity: 0;
+// }
+
+// .menu-open {
+//   width: 100vw !important;
+
+//   opacity: 1 !important;
+
+// }
+
+// div.hidden { display: none; }
