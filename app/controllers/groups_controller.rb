@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = current_user.groups.new(group_params)
-    if @group.save!
+    if @group.save
       flash[:success] = 'Category created successfully!'
       redirect_to group_purchases_path(@group)
     else
@@ -26,9 +26,13 @@ class GroupsController < ApplicationController
 
   def destroy
     @group = Group.find(params[:id])
-    @group.destroy!
-    flash[:success] = 'Category was deleted successfully!'
-    redirect_to groups_url
+    if @group.destroy
+      flash[:success] = 'Category was deleted successfully!'
+      redirect_to groups_url
+    else
+      flash[:error] = @group.errors.full_messages.to_sentence
+      redirect_to groups_url
+    end
   end
 
   def group_params
