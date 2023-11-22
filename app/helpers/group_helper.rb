@@ -4,7 +4,7 @@ module GroupHelper
   end
 
   def check_url(url)
-    default = 'missing_avatar.png'
+    default = 'no-pictures.png'
     if (File.extname(url) =~ /^(.png|.gif|.jpg)$/) || (url =~ /^#{URI::DEFAULT_PARSER.make_regexp}$/)
       url
     else
