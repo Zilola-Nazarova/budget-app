@@ -72,7 +72,7 @@ The **SmartPocket** keeps track of all your expences associated with catogories.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- The Live Demo is available [here]()
+- The Live Demo is available [here](https://smart-pocket-app.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -179,6 +179,8 @@ If you like this project just star it!
 
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+Original design idea by <a target="_blank" href="https://www.behance.net/gregoirevella">Gregoire Vella</a>
 
 I would like to thank the Microverse program for the knowledge and skills I have acquired in Modules 1-5.
 
