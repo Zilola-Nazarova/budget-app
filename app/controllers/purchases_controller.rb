@@ -41,11 +41,12 @@ class PurchasesController < ApplicationController
       flash.now[:error] = 'You must choose at least one category!'
       render :edit
     elsif @purchase.update(purchase_params.except(:group_ids))
+      @purchase.groups.delete_all
       @groups.each do |group|
         group.purchases << @purchase unless group.purchases.include?(@purchase)
       end
       flash[:succes] = 'Transaction updated successfully!'
-      redirect_to group_purchase_path(params[:group_id], params[:id])
+      redirect_to group_purchases_path(params[:group_id])
     else
       flash.now[:error] = @purchase.errors.full_messages.to_sentence
       render :edit
