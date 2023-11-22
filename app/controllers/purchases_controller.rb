@@ -47,7 +47,7 @@ class PurchasesController < ApplicationController
         @groups.each do |group|
           group.purchases << @purchase unless group.purchases.include?(@purchase)
         end
-        flash[:notice] = 'Transaction updated successfully!'
+        flash[:succes] = 'Transaction updated successfully!'
         redirect_to group_purchase_path(params[:group_id], params[:id])
       else
         flash.now[:error] = @purchase.errors.full_messages.to_sentence

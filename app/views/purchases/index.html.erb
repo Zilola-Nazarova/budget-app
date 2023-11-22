@@ -13,13 +13,15 @@
     <%= content_tag :div, msg, class: name %>
   <% end -%>
 
-  <div class='item top_category'>
-    <%= image_tag(check_url(@group.icon), class: 'icon', alt: 'group_icon') %>
-    <div class="group_info">
-      <span class="name"><%= @group.name %></span>
-      <span class="amount">$<%= total_amount(@group)%></span>
-      <span class="date"><%= @group.created_at.strftime('%d %b %Y') %></span>
-    </div>
+  <div class='top_category'>
+    <%= link_to edit_group_url(@group), data: { turbo: false }, class: 'item' do %>
+      <%= image_tag(check_url(@group.icon), class: 'icon', alt: 'group_icon') %>
+      <div class="group_info">
+        <span class="name"><%= @group.name %></span>
+        <span class="amount">$<%= total_amount(@group)%></span>
+        <span class="date"><%= @group.created_at.strftime('%d %b %Y') %></span>
+      </div>
+    <% end %>
   </div>
 
   <ul class="purchase_list">

@@ -31,6 +31,11 @@ $red: #c72727;
 }
 
 body {
+  font-family: 'proxima-nova', sans-serif;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   min-width: 300px;
 }
 
@@ -43,14 +48,6 @@ a {
   width: 2rem;
   height: 2rem;
   color: black;
-}
-
-body {
-  font-family: 'proxima-nova', sans-serif;
-  font-weight: 100;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 header {
@@ -80,7 +77,11 @@ main {
 }
 
 .with_actions {
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
+}
+
+.with_two_actions {
+  margin-bottom: 10rem;
 }
 
 ul.group_list {
@@ -131,6 +132,11 @@ span {
   font-size: 0.8rem;
   text-transform: uppercase;
   color: $light-grey;
+}
+
+.icon {
+  height: 100%;
+  margin-right: 1rem;
 }
 
 .associated_category .icon {
@@ -201,23 +207,18 @@ span {
   height: 1rem;
 }
 
-.icon {
-  height: 100%;
-  margin-right: 1rem;
-}
-
 .btn {
   border: none;
   outline: 1px solid $white;
-  outline-offset: -15px;
+  outline-offset: -0.8rem;
   width: 100%;
   background-color: $green;
-  height: 6rem;
+  height: 5rem;
   position: fixed;
   bottom: 0;
   left: 0;
   text-align: center;
-  line-height: 6rem;
+  line-height: 5rem;
   display: block;
   align-self: center;
   text-transform: uppercase;
@@ -231,14 +232,14 @@ span {
 }
 
 .upper_action {
-  bottom: 6rem;
+  bottom: 5rem;
 }
 
 #popup {
   height: 50px;
   width: 200px;
   text-align: center;
-  vertical-align:middle;
+  vertical-align: middle;
   background-color: cornflowerblue;
   color: white;
   display: none;

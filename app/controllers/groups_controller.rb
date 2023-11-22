@@ -20,9 +20,20 @@ class GroupsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @group = Group.find(params[:id])
+  end
 
-  def update; end
+  def update
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+      flash[:success] = 'Category updated successfully!'
+      redirect_to group_purchases_path(@group)
+    else
+      flash.now[:error] = @group.errors.full_messages.to_sentence
+      render :edit
+    end
+  end
 
   def destroy
     @group = Group.find(params[:id])
