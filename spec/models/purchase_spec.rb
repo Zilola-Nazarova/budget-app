@@ -20,7 +20,8 @@ RSpec.describe Purchase, type: :model do
   end
 
   before :all do
-    @user = User.create(name: 'Tom')
+    # User.delete_all
+    @user = User.create(name: 'Tom', email: 'tom@example.com', password: 'topsecret')
   end
 
   context 'user' do
