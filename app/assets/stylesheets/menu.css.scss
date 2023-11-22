@@ -12,7 +12,7 @@ $red: #c72727;
   position: absolute;
   height: 100vh;
   width: 80%;
-  background-image: linear-gradient(to right, $blue , #215794);
+  background-image: linear-gradient(to right, $blue, #215794);
   z-index: 5;
   opacity: 0.95;
   color: white;
@@ -51,9 +51,10 @@ $red: #c72727;
   gap: 1rem;
   padding: 0.5rem;
 }
+
 .user_info span:last-child {
   font-size: 0.9rem;
-  overflow:hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 

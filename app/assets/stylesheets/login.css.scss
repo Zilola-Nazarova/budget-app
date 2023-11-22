@@ -71,12 +71,6 @@ input.login_btn {
   white-space: normal;
 }
 
-.new_user input:focus {
-  outline: none;
-  border-top: 1px solid $normal-grey;
-  border-bottom: 1px solid $normal-grey;
-}
-
 .new_user input::placeholder {
   color: $light-grey;
   font-size: 0.9rem;
@@ -126,19 +120,14 @@ input.login_btn {
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.checkmark::after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.container .checkmark::after {
   left: 4px;
   top: -1px;
   width: 5px;
@@ -150,9 +139,20 @@ input.login_btn {
   transform: rotate(45deg);
 }
 
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark::after {
+  display: block;
+}
+
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.new_user input:focus {
+  outline: none;
+  border-top: 1px solid $normal-grey;
+  border-bottom: 1px solid $normal-grey;
 }

@@ -42,7 +42,7 @@ class GroupsController < ApplicationController
       redirect_to groups_url
     else
       flash[:error] = @group.errors.full_messages.to_sentence
-      redirect_to groups_url
+      render :index
     end
   end
 
