@@ -25,9 +25,9 @@
 # 📖 SmartPocket <a name="about-project"></a>
 
 The **SmartPocket** keeps track of all your expences associated with catogories. It will allow you to:
-- create new transactions in order keep track of how much your expences
+- create new transactions in order keep track of your expences
 - update/delete existing transactions
-- create new catrgories in order to classify your expecnes by categories
+- create new categories in order to classify your expences by categories
 - see the calculated total amount of expences per category
 - update/delete existing categories
 
