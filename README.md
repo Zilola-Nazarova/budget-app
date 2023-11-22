@@ -180,6 +180,8 @@ If you like this project just star it!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
+Original design idea by <a target="_blank" href="https://www.behance.net/gregoirevella">Gregoire Vella</a>
+
 I would like to thank the Microverse program for the knowledge and skills I have acquired in Modules 1-5.
 
 I am grateful to all previous project reviewers for their advice. Thanks to them I could build this app.
