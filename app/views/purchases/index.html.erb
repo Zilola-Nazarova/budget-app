@@ -24,6 +24,12 @@
     <% end %>
   </div>
 
+  <% if @purchases.empty? %>
+    <div class="empty">
+      <p>Group has no transactions.</p>
+    </div>
+  <% end %>
+
   <ul class="purchase_list">
     <% @purchases.each do |purchase| %>
       <li>

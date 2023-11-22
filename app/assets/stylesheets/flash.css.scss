@@ -16,7 +16,8 @@ $red: #c72727;
 
 .success,
 .error,
-.notice {
+.notice,
+.empty {
   background-color: $white;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
@@ -33,4 +34,9 @@ $red: #c72727;
 
 .notice {
   color: $blue;
+}
+
+.empty {
+  color: $light-grey;
+  margin-top: 0.5rem;
 }

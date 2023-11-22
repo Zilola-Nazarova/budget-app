@@ -10,6 +10,12 @@
     <%= content_tag :div, msg, class: name %>
   <% end -%>
 
+  <% if @groups.empty? %>
+    <div class="empty">
+      <p>You have not added any categories.</p>
+    </div>
+  <% end %>
+
   <ul class="group_list">
     <% @groups.each do |group| %>
       <% total_amount = total_amount(group) %>
