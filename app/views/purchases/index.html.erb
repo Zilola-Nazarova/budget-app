@@ -31,7 +31,7 @@
   <% end %>
 
   <ul class="purchase_list">
-    <% @purchases.each do |purchase| %>
+    <% @purchases.includes([:groups]).each do |purchase| %>
       <li>
         <%= link_to group_purchase_url(@group, purchase), data: { turbo: false }, class: "item purchase" do %>
           <div class="group_info no_margin">
