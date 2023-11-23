@@ -3,8 +3,6 @@ class GroupsController < ApplicationController
     @groups = current_user.groups
   end
 
-  def show; end
-
   def new
     @group = Group.new
   end
@@ -45,6 +43,8 @@ class GroupsController < ApplicationController
       render :index
     end
   end
+
+  private
 
   def group_params
     params.require(:group).permit(:name, :icon)
