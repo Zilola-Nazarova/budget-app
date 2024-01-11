@@ -15,7 +15,9 @@
 
   <div class='top_category'>
     <%= link_to edit_group_url(@group), data: { turbo: false }, class: 'item' do %>
-      <%= image_tag(check_url(@group.icon), class: 'icon', alt: 'group_icon') %>
+      <div class="icon_div">
+        <%= image_tag(check_url(@group.icon), class: 'icon', alt: 'group_icon') %>
+      </div>
       <div class="group_info">
         <span class="name"><%= @group.name %></span>
         <span class="amount">$<%= total_amount(@group)%></span>
@@ -46,7 +48,9 @@
         <ul class="item associated_categories">
           <% purchase.groups.each do |group| %>
             <li class="associated_category">
-              <%= image_tag(check_url(group.icon), class: 'icon', alt: 'group_icon') %>
+              <div class="icon_div">
+                <%= image_tag(check_url(group.icon), class: 'icon', alt: 'group_icon') %>
+              </div>
               <span><%= group.name %></span>
             </li>
           <% end %>

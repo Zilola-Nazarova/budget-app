@@ -106,9 +106,10 @@ span {
 .item {
   background-color: $white;
   padding: 0.5rem;
-  height: 6rem;
+  height: 7rem;
   display: flex;
   position: relative;
+  overflow: hidden;
 }
 
 .checkout {
@@ -129,18 +130,30 @@ span {
 .associated_category {
   align-items: center;
   display: flex;
-  height: 1.2rem;
+  height: 2.2rem;
   font-size: 0.8rem;
   text-transform: uppercase;
   color: $light-grey;
 }
 
-.icon {
+.icon_div {
+  width: 12%;
   height: 100%;
+  overflow: hidden;
   margin-right: 1rem;
+  display: flex;
 }
 
-.associated_category .icon {
+.icon {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+
+.associated_category .icon_div {
+  width: 6%;
+  height: 100%;
+  overflow: hidden;
   margin-right: 0.5rem;
 }
 
